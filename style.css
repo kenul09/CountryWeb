@@ -1,0 +1,134 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+  background: url("./images/map-world-countries-flag-wallpaper-preview.jpg")
+              center / cover no-repeat fixed;
+
+  position: relative;
+}
+
+/* Qaranlıq effekt */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* 0.5-0.7 arası ideal */
+  z-index: 0;
+}
+
+/* Content üstə çıxsın */
+.wrap {
+  position: relative;
+  z-index: 1;
+}
+
+
+.wrap {
+  min-height: 100vh;
+  display: grid;
+  place-items: start center;
+  padding: 90px 16px;
+  gap: 16px;
+}
+
+/* YALNIZ SEARCH GÖRÜNÜR */
+.searchRow {
+  width: min(760px, 100%);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: center;
+}
+
+.searchInput {
+  height: 46px;
+  padding: 0 14px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  background: #eef2ff;
+  opacity: .9;
+  outline: none;
+  font-size: 15px;
+}
+
+.searchInput:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, .15);
+}
+
+.searchBtn {
+  height: 46px;
+  padding: 0 18px;
+  border: 2px solid rgb(7, 230, 255);
+  opacity: .9;
+  background: white;
+  color: black;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.searchBtn:disabled { opacity: .65; cursor: not-allowed; }
+
+/* Nəticələr ancaq axtarışdan sonra görünəcək */
+.hidden { display: none; }
+
+.results {
+  width: min(860px, 100%);
+  display: grid;
+  gap: 10px;
+}
+
+/* Kart */
+.countryCard {
+  display: grid;
+  grid-template-columns: 60px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 14px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+}
+
+.flag {
+  width: 56px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.name {
+  font-weight: 800;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.meta {
+  margin: 3px 0 0;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.badge {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+}
+
+.message {
+  width: min(860px, 100%);
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 12px 14px;
+  color: #6b7280;
+}
